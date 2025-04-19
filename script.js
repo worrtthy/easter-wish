@@ -74,3 +74,5 @@ window.onload = () => {
       }, 3000);
     });
   }
+
+  document.getElementById("tapMessage").style.display = "none";

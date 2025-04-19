@@ -10,46 +10,57 @@
 </head>
 
 <body>
-  <main>
-    <div class="welcome" id="welcome">
-      <p>Hello, beloved! 🌿</p>
-      <p>Click the button for a special message ✝️</p>
-      <button onclick="closeWelcome()">Okay</button>
-    </div>
+  <!-- Welcome Modal -->
+  <div class="welcome" id="welcome">
+    <p>Hello, beloved! 🌿</p>
+    <p>Click the button for a special message ✝️</p>
+    <button onclick="closeWelcome()">Okay</button>
+  </div>
 
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Egg Section -->
     <div class="egg-container" onclick="crackEgg()">
       <div class="egg" id="egg"></div>
-      <p>Tap the egg to crack it!</p>
+      <p id="tapMessage">Tap the egg to crack it!</p>
     </div>
 
+    <!-- Cracking Text -->
     <div class="cracking-text" id="crackingText">Hold on... the egg is cracking 🐣</div>
 
+    <!-- Cross and Crown -->
     <div class="cross-container" id="crossContainer">
       <div class="crown"></div>
       <div class="cross"></div>
     </div>
 
+    <!-- Easter Message -->
     <div class="message" id="message">
       <h1 id="typewriter"></h1>
-      <p class="scripture">"But God demonstrates his own love for us in this: While we were still sinners, Christ died
-        for
-        us." — Romans 5:8</p>
+      <p class="scripture">
+        "But God demonstrates his own love for us in this: While we were still sinners, Christ died for us." — Romans 5:8
+      </p>
       <button id="shareBtn" onclick="shareSite()">Share with a friend!</button>
     </div>
 
+    <!-- Share Prompt -->
     <div class="share" id="sharePrompt">
       ✨ Link copied! Send it to someone you love 💌
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     Developed by Worthy ✨ — Jesus loves youuu 💕 (🤟)
   </footer>
 
+  <!-- Confetti Canvas -->
   <canvas id="confettiCanvas"></canvas>
 
+  <!-- Background Music -->
   <audio id="easterSong" src="./Lord I Lift Your Name on High  Maranatha! Music (Lyric Video).mp3"></audio>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="script.js"></script>
 </body>
