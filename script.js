@@ -13,13 +13,20 @@ function crackEgg() {
   const crossContainer = document.getElementById("crossContainer");
   const sharePrompt = document.getElementById("sharePrompt");
   const song = document.getElementById("easterSong");
-  const tapMessage = document.getElementById("tapMessage"); // Added
+  const tapMessage = document.getElementById("tapMessage");
 
   if (egg.classList.contains("cracked")) return;
 
+  // Show cracking message
   crackingText.classList.add("show");
-  tapMessage.style.display = "none"; // Hide tap message on crack
 
+  // Fade out the tap message
+  tapMessage.classList.add("fade-out");
+  setTimeout(() => {
+    tapMessage.style.display = "none";
+  }, 600);
+
+  // Continue egg cracking sequence
   setTimeout(() => {
     crackingText.classList.remove("show");
     egg.classList.add("cracked");
@@ -34,12 +41,13 @@ function crackEgg() {
       origin: { y: 0.4 }
     });
 
+    // Show cross and message after short delay
     setTimeout(() => {
       egg.style.display = "none";
       crossContainer.style.display = "flex";
       message.classList.add("show");
 
-      // Start typewriter animation
+      // Typewriter message
       typeMessage(
         "Happy Easter!\nJesus died for you to live.\nGive Him your heart today!",
         "typewriter",
