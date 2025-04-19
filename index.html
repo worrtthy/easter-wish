@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Easter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="welcome" id="welcome">
+    <p>Welcome beloved 🌿</p>
+    <p>Crack the egg for a special message ✝️</p>
+    <button onclick="closeWelcome()">Okay</button>
+  </div>
+
+  <div class="egg-container" onclick="crackEgg()">
+    <div class="egg" id="egg"></div>
+  </div>
+
+  <div class="cracking-text" id="crackingText">Hold on... the egg is cracking 🐣</div>
+
+  <div class="cross-container" id="crossContainer">
+    <div class="crown"></div>
+    <div class="cross"></div>
+  </div>
+
+  <div class="message" id="message">
+    <h1 id="typewriter"></h1>
+    <p class="scripture">"But God demonstrates his own love for us in this: While we were still sinners, Christ died for
+      us." — Romans 5:8</p>
+    <button id="shareBtn" onclick="shareSite()">Share with a friend!</button>
+  </div>
+
+  <div class="share" id="sharePrompt">
+    ✨ Link copied! Send it to someone you love 💌
+  </div>
+
+  <footer>
+    Developed by Worthy ✨ — Jesus loves youuu 💕
+  </footer>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Music -->
+  <audio id="easterSong" src="./Lord I Lift Your Name on High  Maranatha! Music (Lyric Video).mp3"></audio>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
