@@ -42,6 +42,7 @@ function crackEgg() {
     });
 
     // Show cross and message after short delay
+    // Show cross and message after a longer delay
     setTimeout(() => {
       egg.style.display = "none";
       crossContainer.style.display = "flex";
@@ -49,38 +50,37 @@ function crackEgg() {
 
       // Typewriter message
       typeMessage(
-        "Happy Easter!\nJesus died for you to live.\nGive Him your heart today!",
+        "Happy Easter!\nJesus died for you to live.\nDeath did not win, Love did!\nGive Jesus your heart today!",
         "typewriter",
-        40
+        65 // slower typing speed (was 40)
       );
-    }, 700);
-  }, 1500);
-}
+    }, 1600); // increased from 700
+  }, 2500); // increased from 1500
 
-function typeMessage(text, elementId, speed) {
-  let i = 0;
-  const element = document.getElementById(elementId);
-  element.textContent = "";
+  function typeMessage(text, elementId, speed) {
+    let i = 0;
+    const element = document.getElementById(elementId);
+    element.textContent = "";
 
-  function type() {
-    if (i < text.length) {
-      element.textContent += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
+    function type() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
     }
+
+    type();
   }
 
-  type();
-}
+  function shareSite() {
+    const sharePrompt = document.getElementById("sharePrompt");
+    const currentLink = window.location.href;
 
-function shareSite() {
-  const sharePrompt = document.getElementById("sharePrompt");
-  const currentLink = window.location.href;
-
-  navigator.clipboard.writeText(currentLink).then(() => {
-    sharePrompt.classList.add("show");
-    setTimeout(() => {
-      sharePrompt.classList.remove("show");
-    }, 3000);
-  });
-}
+    navigator.clipboard.writeText(currentLink).then(() => {
+      sharePrompt.classList.add("show");
+      setTimeout(() => {
+        sharePrompt.classList.remove("show");
+      }, 3000);
+    });
+  }
